@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Listing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>File Listing</h1>
+    <ul>
+        <!-- Add links to files manually or dynamically -->
+        <script>
+            const files = [
+                "file1.html",
+                "file2.html",
+                "file3.html"
+                // Add more file names as needed
+            ];
+            const folder = "Files"; // Folder name where files are stored
+            
+            const ul = document.querySelector("ul");
+            
+            files.forEach(file => {
+                const li = document.createElement("li");
+                const link = document.createElement("a");
+                link.href = `${folder}/${file}`;
+                link.textContent = file;
+                li.appendChild(link);
+                ul.appendChild(li);
+            });
+        </script>
+    </ul>
+</body>
+</html>
